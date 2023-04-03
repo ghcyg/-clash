@@ -2,7 +2,7 @@
 
 app_name=1
 
-log_file=/root/1234/clash/log.txt
+log_file=/root/clash/log.txt
 
 echo 将要启动的app包:${app_name}
 
