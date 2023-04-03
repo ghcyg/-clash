@@ -1,0 +1,1 @@
+./clash -f config.yaml
