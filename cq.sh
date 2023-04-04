@@ -39,6 +39,3 @@ else
 echo "$app_name 文件不存在,请检查。"
 
 fi
-
-
-#
