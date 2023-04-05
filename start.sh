@@ -1,6 +1,13 @@
 #!/bin/bash
 # 赋权
  chmod -R 777 /root/clash
+# 写入环境变量，如果你希望系统不进行代理请注释掉
+cat > /etc/profile <<EOF
+export http_proxy=http://127.0.0.1:7890
+export https_proxy=http://127.0.0.1:7890
+export all_proxy=socks5://127.0.0.1:7891
+EOF
+sleep 1
 # 获取系统架构
 arch=$(uname -m)
 sleep 2
