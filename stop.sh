@@ -11,6 +11,10 @@ if [ "$arch" = "x86_64" ]; then
 	else
     		echo 目标存在，将执行杀死
 		killall -9 clash-linux-amd64
+		sleep 1
+		echo 删除环境变量
+		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		source /etc/profile
 	fi
 elif [[ "$arch" =~ "aarch64" ||  "$arch" =~ "arm64" ]]; then
 	
@@ -20,7 +24,11 @@ elif [[ "$arch" =~ "aarch64" ||  "$arch" =~ "arm64" ]]; then
     		exit 
 	else
     		echo 目标存在，将执行杀死
-		killall -9 clash-linux-arm64 
+		killall -9 clash-linux-arm64
+		sleep 1
+		echo 删除环境变量
+		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		source /etc/profile 
 	fi
 elif [ "$arch" = "armv7" ]; then
       
@@ -32,6 +40,10 @@ elif [ "$arch" = "armv7" ]; then
 	else
     		echo 目标存在，将执行杀死
     		killall -9 clash-linux-armv7
+    		sleep 1
+		echo 删除环境变量
+		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		source /etc/profile
     	fi
 else
     echo "不支持该系统，请手动停止"
