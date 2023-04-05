@@ -1,4 +1,10 @@
 #!/bin/bash
+ikun=`ps | grep clash-linux- | grep -v grep | wc -l`;
+if [ $ikun -eq 1 ];then
+	sleep 1
+	echo 该进程已存在,退出脚本
+	exit
+else
 # 赋权
  chmod -R 777 /root/clash
 # 写入环境变量，如果你希望系统不进行代理请注释掉
@@ -36,4 +42,5 @@ if [ $ikun -eq 0 ];then
     cd /root/clash/bin && nohup ./clash-linux-amd64 -f config.yaml > /root/clash/log.txt 2>&1 &
 else
     echo 运行成功
+fi
 fi
