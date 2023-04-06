@@ -13,7 +13,7 @@ if [ "$arch" = "x86_64" ]; then
 		killall -9 clash-linux-amd64
 		sleep 1
 		echo 删除环境变量
-		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		sed -i '/127/d' /etc/profile
 		source /etc/profile
 	fi
 elif [[ "$arch" =~ "aarch64" ||  "$arch" =~ "arm64" ]]; then
@@ -27,7 +27,7 @@ elif [[ "$arch" =~ "aarch64" ||  "$arch" =~ "arm64" ]]; then
 		killall -9 clash-linux-arm64
 		sleep 1
 		echo 删除环境变量
-		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		sed -i '/127/d' /etc/profile
 		source /etc/profile 
 	fi
 elif [ "$arch" = "armv7" ]; then
@@ -42,7 +42,7 @@ elif [ "$arch" = "armv7" ]; then
     		killall -9 clash-linux-armv7
     		sleep 1
 		echo 删除环境变量
-		head -n -3 /etc/profile > /etc/temp && mv /etc/temp /etc/profile
+		sed -i '/127/d' /etc/profile
 		source /etc/profile
     	fi
 else
