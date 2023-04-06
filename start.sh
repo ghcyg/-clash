@@ -6,15 +6,35 @@ if [ $ikun -eq 1 ];then
 	exit
 else
 # 赋权
- chmod -R 777 /root/clash
+chmod -R 777 /root/clash
+chmod -R 755 /etc/profile
 # 写入环境变量，如果你希望系统不进行代理请注释掉
 echo 写入环境变量
-chmod -R 755 /etc/profile
-cat >> /etc/profile <<EOF
-export http_proxy=http://127.0.0.1:7890
+
+# 定义要写入的字符
+content="export http_proxy=http://127.0.0.1:7890
 export https_proxy=http://127.0.0.1:7890
-export all_proxy=socks5://127.0.0.1:7891
-EOF
+export all_proxy=socks5://127.0.0.1:7891"
+
+# 定义要写入的文件路径
+file_path="/etc/profile"
+
+# 判断文件中是否已经包含该字符
+if grep -q "$content" "$file_path"; then
+    	echo "已存在，退出"
+else
+    # 写入字符到文件中
+	if tail -n 1 "$file_path" | grep -q "^$"; then
+    		echo "已有空行"
+	else
+    		echo "" >> "$file_path"
+    		echo "插入空行"
+	fi
+	sleep 1
+   	echo "$content" >> "$file_path"
+    	echo "写入成功"
+fi
+
 sleep 1
 source /etc/profile
 # 获取系统架构
