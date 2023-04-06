@@ -22,6 +22,7 @@ external-controller: '0.0.0.0:9090'
 
 #第三方访问ui
 #external-ui: 
+## 下面的信息自己替换
 proxies:
   - {name: 🇺🇲 美国🇺🇸, server: www.84304003.xyz, port: 443, type: vmess, uuid: 418048af-a218-4b99-9b0c-98ca3580dd24, alterId: 64, cipher: auto, tls: true, network: ws, ws-opts: {path: /path/192222041903, headers: {Host: www.84304003.xyz}}}
   - {name: 🇯🇵 日本🇯🇵, server: www.18229704.xyz, port: 443, type: vmess, uuid: 08081762-7d36-4fe5-abac-34457a677ade, alterId: 64, cipher: auto, tls: true, network: ws, ws-opts: {path: /path/192222041903, headers: {Host: www.18229704.xyz}}}
