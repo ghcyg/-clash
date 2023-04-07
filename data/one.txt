@@ -22,4 +22,3 @@ external-controller: '0.0.0.0:9090'
 
 #第三方访问ui
 #external-ui: 
-## 下面的信息自己替换
