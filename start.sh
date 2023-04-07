@@ -58,9 +58,9 @@ fi
 sleep 2
 ikun=`ps | grep clash | grep -v grep | wc -l`;
 if [ $ikun -eq 0 ];then
-    echo 运行失败，再次尝试运行
-    cd /root/clash/bin && nohup ./clash-linux-amd64 -f config.yaml > /root/clash/log.txt 2>&1 &
+    echo 运行失败，请手动尝试运行
 else
     echo 运行成功
 fi
+
 fi
