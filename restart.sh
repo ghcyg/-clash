@@ -40,13 +40,13 @@ if [ "$arch" = "x86_64" ]; then
     echo 正在重新启动
     sleep 1
     killall -9 clash-linux-arm64
-    sleep1
+    sleep 1
     cd /root/clash/bin && nohup ./clash-linux-amd64 -f config.yaml > /root/clash/log.txt 2>&1 &
 elif [[ "$arch" =~ "aarch64" ||  "$arch" =~ "arm64" ]]; then
     echo 正在重新启动
     sleep 1
     killall -9 clash-linux-arm64
-    sleep1
+    sleep 1
     cd /root/clash/bin && nohup ./clash-linux-arm64 -f config.yaml > /root/clash/log.txt 2>&1 &
 elif [ "$arch" = "armv7" ]; then
     echo 正在启动32位程序
@@ -54,7 +54,7 @@ elif [ "$arch" = "armv7" ]; then
     echo 正在重新启动
     sleep 1
     killall -9 clash-linux-arm64
-    sleep1
+    sleep 1
     cd /root/clash/bin && nohup ./clash-linux-armv7 -f config.yaml > /root/clash/log.txt 2>&1 &
 else
     echo "退出"
