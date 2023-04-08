@@ -16,7 +16,7 @@ clash使用教程
 
 默认每次启动都会更新订阅源
 
-2、使用自定义配置，需要将自己提供config.yaml的文件放入bin文件夹下，运行sh start.sh
+2、使用自定义配置，需要将自己提供的配置文件放入bin文件夹Customization.yaml下，运行sh start.sh
 
 该模式不会更新你的配置文件，适合稳定的线路
 
