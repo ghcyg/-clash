@@ -18,7 +18,6 @@ file_path="/root/.bashrc"
 # 判断文件中是否已经包含该字符
 if grep -q "$content" "$file_path"; then
     	echo "已存在，退出"
-      exit
 else
     # 写入字符到文件中
 	if tail -n 1 "$file_path" | grep -q "^$"; then
