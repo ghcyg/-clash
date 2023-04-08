@@ -47,7 +47,7 @@ elif [ "$arch" = "armv7" ]; then
     	fi
 else
     echo "不支持该系统，请手动停止"
-    break
+    exit
     
 fi
 sleep 2
