@@ -3,7 +3,7 @@ ikun=`ps | grep clash-linux- | grep -v grep | wc -l`;
 
 # 赋权
 chmod -R 777 /root/clash
-chmod -R 755 /root/.bashrc
+chmod -R 755 /etc/profile
 # 写入环境变量，如果你希望系统不进行代理请注释掉
 echo 写入环境变量
 
@@ -13,7 +13,7 @@ export https_proxy=http://127.0.0.1:7890
 export all_proxy=socks5://127.0.0.1:7891"
 
 # 定义要写入的文件路径
-file_path="/root/.bashrc"
+file_path="/etc/profile"
 
 # 判断文件中是否已经包含该字符
 if grep -q "$content" "$file_path"; then
@@ -32,7 +32,7 @@ else
 fi
 
 sleep 1
-source /root/.bashrc
+source /etc/profile
 # 获取系统架构
 arch=$(uname -m)
 sleep 2
